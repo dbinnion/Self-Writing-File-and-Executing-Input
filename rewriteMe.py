@@ -3,7 +3,7 @@ import time
 import re
 
 # let user know the program is starting
-print("program start...")
+print("starting program...")
 
 
 # function to rewrite the program
@@ -31,12 +31,9 @@ def rewrite():
     f.write(replaced_string)
     f.close()
 
-    # execute the altered file (again, it is this file)
+    # execute the altered file (again, it is this file).  no need to re-read it since it's already in the variable.
     print('executing file...')
-    f = open('rewriteMe.py', 'r')
-    file_string = f.read()
-    exec file_string
-    f.close()
+    exec replaced_string
     exit(0)
 
 # take in other file as code (rather than as string input) and execute it
